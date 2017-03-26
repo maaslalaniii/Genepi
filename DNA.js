@@ -3,10 +3,12 @@ function DNA() {
   this.genetics = []
   this.fitness = 0
 
+  // fill the genetics with random digits
   for (let i = 0; i < digits; i++) {
     this.genetics[i] = floor(random(10))
   }
 
+  // the fitness score is how many correct numbers the genetics have in the correct position
   this.calculateFitness = function() {
     for (let i = 0; i < digits; i++) {
       if (this.genetics[i] == pi[i])
@@ -14,6 +16,7 @@ function DNA() {
     }
   }
 
+  // breed a new child by mating with a partner and merging their dna
   this.crossover = function(partner) {
     let midpoint = floor(random(this.genetics.length))
     let child = new DNA()
@@ -28,9 +31,10 @@ function DNA() {
     return child
   }
 
+  // at a 1% chance for each gene mutate it by replacing it
   this.mutate = function() {
     for (let i = 0; i < digits; i++) {
-      if (random(1) < 0.02)
+      if (random(1) < 0.01)
         this.genetics[i] = floor(random(10))
     }
   }
