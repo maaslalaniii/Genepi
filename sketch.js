@@ -6,7 +6,7 @@ function setup() {
 
   // create a population with random genetics
   population = new Population()
-  
+
 }
 
 function draw() {
@@ -18,7 +18,7 @@ function draw() {
   display.html(population.strongest())
 
   // check to see if the algorithm was successful
-  if (population.update() == pi.join('')) {
+  if (population.strongest() == pi.join('')) {
     result.html('Evolution completed!')
   } else {
     population.evolve()
