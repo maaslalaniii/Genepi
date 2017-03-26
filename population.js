@@ -1,7 +1,6 @@
 class Population {
 
   constructor() {
-
     this.population = []
     this.matingPool = []
     this.generation = 0
@@ -13,18 +12,14 @@ class Population {
   }
 
   calculateFitness() {
-
     // calculate the fitness for every item in poplation
     for (let i = 0; i < N; i++) {
       this.population[i].calculateFitness()
     }
-
   }
 
   averageFitness() {
-
     this.calculateFitness()
-
     let sum = 0
 
     // calculate the average fitness of the population
@@ -33,11 +28,9 @@ class Population {
     }
 
     return sum / N
-
   }
 
   strongest() {
-
     // find the strongest element in the population
     let element = this.population[0]
 
@@ -48,11 +41,9 @@ class Population {
     }
 
     return element.genetics.join('')
-
   }
 
   evolve() {
-
     this.generation++
     
     // breed the new generation
@@ -75,7 +66,6 @@ class Population {
 
       this.population[i] = child
     }
-
   }
 
 }

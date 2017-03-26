@@ -1,7 +1,5 @@
 function setup() {
-
   noCanvas()
-
   frameRate(15)
 
   // setup the dom elements to show progress
@@ -14,11 +12,9 @@ function setup() {
 
   // create a population with random genetics
   population = new Population()
-
 }
 
 function draw() {
-
   // calculate the fitness of the population
   population.calculateFitness()
 
@@ -41,5 +37,4 @@ function draw() {
     cache.scrollTop = cache.scrollHeight
     fitness.scrollTop = fitness.scrollHeight
   }
-
 }
