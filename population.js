@@ -1,41 +1,43 @@
-function Population() {
+class Population {
 
-  this.population = []
-  this.matingPool = []
+  constructor() {
 
-  // fill the population with random genetics
-  for (let i = 0; i < N; i++) { 
-    this.population[i] = new DNA()
+    this.population = []
+    this.matingPool = []
+
+    // fill the population with cells that have random DNA
+    for (let i = 0; i < N; i++) {
+      this.population[i] = new DNA()
+    }
   }
 
-  // calculate the fitness for every item in poplation
-  this.calculateFitness = function () {
+  calculateFitness() {
 
+    // calculate the fitness for every item in poplation
     for (let i = 0; i < N; i++) {
       this.population[i].calculateFitness()
     }
-  
+
   }
 
-  // find the strongest element in the population
-  this.strongest = function() {
+  strongest() {
 
+    // find the strongest element in the population
     let element = this.population[0]
-    
+
     for (let i = 0; i < N; i++) {
       if (this.population[i].fitness > element) {
         element = this.population[i]
       }
     }
-    
+
     return element.genetics.join('')
-  
+
   }
 
-  // breed the new generation
-  this.evolve = function() {
+  evolve() {
 
-    // clear the mating pool
+    // breed the new generation
     this.matingPool = []
 
     // fill the mating pool
@@ -49,7 +51,7 @@ function Population() {
     for (let i = 0; i < N; i++) {
       let mother = this.matingPool[floor(random(this.matingPool.length))]
       let father = this.matingPool[floor(random(this.matingPool.length))]
-      
+    
       let child = mother.crossover(father)
       child.mutate()
 
