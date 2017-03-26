@@ -1,0 +1,10 @@
+body {
+  background-color: #111;
+}
+
+p {
+  font-family: 'roboto mono', monospace;
+  font-size: 30pt;
+  padding-left: 50px;
+  color: #fff
+}
