@@ -2,9 +2,15 @@ function setup() {
 
   noCanvas()
 
+  frameRate(15)
+
   // setup the dom elements to show progress
   display = select('#display')
   result = select('#result')
+  generation = document.querySelector('#generation span')
+
+  cache = document.querySelector('#cache')
+  fitness = document.querySelector('#fitness')
 
   // create a population with random genetics
   population = new Population()
@@ -24,6 +30,16 @@ function draw() {
     result.html('Evolution completed!')
   } else {
     population.evolve()
+    
+    console.log(population)
+
+    generation.innerHTML = population.generation
+    
+    createP(population.strongest()).parent(cache)
+    createP(population.averageFitness()).parent(fitness)
+    
+    cache.scrollTop = cache.scrollHeight
+    fitness.scrollTop = fitness.scrollHeight
   }
 
 }

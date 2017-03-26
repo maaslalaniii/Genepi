@@ -4,6 +4,7 @@ class Population {
 
     this.population = []
     this.matingPool = []
+    this.generation = 0
 
     // fill the population with cells that have random DNA
     for (let i = 0; i < N; i++) {
@@ -17,6 +18,21 @@ class Population {
     for (let i = 0; i < N; i++) {
       this.population[i].calculateFitness()
     }
+
+  }
+
+  averageFitness() {
+
+    this.calculateFitness()
+
+    let sum = 0
+
+    // calculate the average fitness of the population
+    for (let i = 0; i < N; i++) {
+      sum += this.population[i].fitness
+    }
+
+    return sum / N
 
   }
 
@@ -37,6 +53,8 @@ class Population {
 
   evolve() {
 
+    this.generation++
+    
     // breed the new generation
     this.matingPool = []
 

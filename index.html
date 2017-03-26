@@ -2,17 +2,27 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono">
-  <link rel="stylesheet" type="text/css" href="resources/main.css">
+  <link rel="stylesheet" type="text/css" href="./resources/main.css">
   <title>Genepi</title>
 </head>
 <body>
 
   <p id="display">PI</p>
-  <p id="result">Evolving...</p>
+  <p id="generation">Generation: <span>0</span></p>
+
+  <span class="information">Population: 100</span>
+  <span class="information">Mutation Rate: 1%</span>
   
-  <script src="libraries/p5.min.js" type="text/javascript"></script>
-  <script src="libraries/p5.dom.js" type="text/javascript"></script>
-  <script src="resources/global.js" type="text/javascript"></script>
+  <p id="result">Evolving...</p>
+
+  <div id="statistics">
+    <div id="cache"></div>
+    <div id="fitness"></div>
+  </div>
+
+  <script src="./libraries/p5.min.js" type="text/javascript"></script>
+  <script src="./libraries/p5.dom.js" type="text/javascript"></script>
+  <script src="./resources/global.js" type="text/javascript"></script>
   <script src="DNA.js" type="text/javascript"></script>
   <script src="population.js" type="text/javascript"></script>
   <script src="sketch.js" type="text/javascript"></script>
