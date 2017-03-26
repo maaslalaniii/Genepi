@@ -1,8 +1,10 @@
 function setup() {
 
+  noCanvas()
+
   // setup the dom elements to show progress
-  display = createP('PI')
-  result = createP('Evolving...')
+  display = select('#display')
+  result = select('#result')
 
   // create a population with random genetics
   population = new Population()
