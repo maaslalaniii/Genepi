@@ -6,7 +6,7 @@ Generating digits of PI using the genetic algorithm.
 ## Usage
 Open [https://maaslalaniii.github.io/Genepi](https://maaslalaniii.github.io/Genepi) to view the simulation.
 
-Works only in google chrome, make sure javascript is enabled.
+Works in chrome, firefox, and edge, make sure javascript is enabled.
 
 ## Built With
 * [p5.js](https://github.com/processing/p5.js) is a JS client-side library for creating graphic and interactive experiences, based on the core principles of Processing.
